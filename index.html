@@ -1,0 +1,38 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/32f6a193e9.js" crossorigin="anonymous"></script>
+    <title>ETRobo情報共有</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>名前</th>
+            <th>リンク <i class="fa-solid fa-arrow-up-right-from-square"></i></th>
+            <th>備考</th>
+        </tr>
+        <script type="module">
+            import { data } from './data.js';
+            const table = document.querySelector('table');
+            table.className = 'data-table';
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                const nameCell = document.createElement('td');
+                const linkCell = document.createElement('td');
+                const noteCell = document.createElement('td');
+                
+                nameCell.textContent = item.name;
+                linkCell.innerHTML = `<a href="${item.url}" target="_blank">${item.url}</a>`;
+                noteCell.innerHTML = item.note || 'なし';
+                
+                row.appendChild(nameCell);
+                row.appendChild(linkCell);
+                row.appendChild(noteCell);
+                table.appendChild(row);
+            });
+        </script>
+    </table>
+</body>
+</html>
