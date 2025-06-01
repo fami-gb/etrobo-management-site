@@ -6,6 +6,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: start;
+    box-sizing: border-box;
 }
 
 table {
@@ -13,19 +14,25 @@ table {
     border-collapse: collapse;
     text-align: center;
     margin-top: 20px;
+    min-width: 320px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    display: block;
 }
 
-th {
-    /* background-color: #4CAF50; */
-    background-color: #0a8cd8;
-    color: white;
+th, td {
     padding: 10px;
-    font-weight: bold;
+    word-break: break-word;
 }
 
 td {
     border: 1px solid #ddd;
-    padding: 10px;
+}
+
+th {
+    background-color: #0a8cd8;
+    color: white;
+    font-weight: bold;
 }
 
 tr:nth-child(even) {
@@ -35,4 +42,17 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #ddd;
     transition: 0.3s;
+}
+
+@media (max-width: 600px) {
+    html, body {
+        padding: 0 5px;
+    }
+    table {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    th, td {
+        padding: 6px;
+    }
 }
