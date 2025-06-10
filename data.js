@@ -24,6 +24,11 @@ export const data = [
         note: "モデリングツール"
     },
     {
+      name: "2025_etrobo_workspace",
+      url: "https://github.com/fami-gb/2025_etrobo_workspace",
+      note: "開発リポジトリ"
+    },
+    {
         name: "Git Mind",
         url: "https://gitmind.com/app/docs/mbtmtudp",
         note: "アイデア共有"
